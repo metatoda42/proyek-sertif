@@ -18,8 +18,9 @@
 
             <div class="w-full p-6">
                 <p class="text-gray-700">
-                    You are logged in!
+                    Selamat Datang {{ Auth::user()->name }}
                 </p>
+                <a href="/cars"> <button type="button" class="btn btn-primary" >Listing Produk</button></a>
             </div>
         </section>
     </div>

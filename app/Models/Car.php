@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Car extends Model 
+class Car extends Model
 {
     use HasFactory;
 
@@ -29,11 +29,11 @@ class Car extends Model
     public function engines()
     {
         return $this->hasManyThrough(
-                Engine::class,
-                CarModel::class,
-                'car_id', //Foreign key on CarModel table
-                'model_id' //Foreign key on Engine table
-            );
+            Engine::class,
+            CarModel::class,
+            'car_id', //Foreign key on CarModel table
+            'model_id' //Foreign key on Engine table
+        );
     }
 
     //Define a has one through relationship

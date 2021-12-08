@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Car;
-use App\Models\Headquarter;
-use App\Models\Product;
+use Illuminate\Http\Request;
 
 class CarsController extends Controller
 {
@@ -28,7 +26,7 @@ class CarsController extends Controller
         $cars = Car::paginate(3);
 
         return view('cars.index', [
-            'cars' => $cars
+            'cars' => $cars,
         ]);
     }
 
@@ -39,7 +37,7 @@ class CarsController extends Controller
      */
     public function create()
     {
-        
+
         return view('cars.create');
     }
 
@@ -55,19 +53,19 @@ class CarsController extends Controller
             'name' => 'required',
             'founded' => 'required|integer|min:0|max:2021',
             'description' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg|max:5048'
+            'image' => 'required|mimes:jpg,png,jpeg|max:5048',
         ]);
 
-        $newImageName = time().'-'.$request->name . '.'.$request->image->extension();
+        $newImageName = time() . '-' . $request->name . '.' . $request->image->extension();
 
         $request->image->move(public_path('images'), $newImageName);
-            
+
         $car = Car::create([
             'name' => $request->input('name'),
             'founded' => $request->input('founded'),
             'description' => $request->input('description'),
             'image_path' => $newImageName,
-            'user_id' => auth()->user()->id
+            'user_id' => auth()->user()->id,
         ]);
 
         return redirect('/cars');
@@ -80,9 +78,9 @@ class CarsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {   
+    {
         $car = Car::find($id);
-    
+
         return view('cars.show')->with('car', $car);
     }
 
@@ -95,7 +93,7 @@ class CarsController extends Controller
     public function edit($id)
     {
         $car = Car::find($id)->first();
-        
+
         return view('cars.edit')->with('car', $car);
     }
 
@@ -112,8 +110,8 @@ class CarsController extends Controller
             ->update([
                 'name' => $request->input('name'),
                 'founded' => $request->input('founded'),
-                'description' => $request->input('description')
-        ]);
+                'description' => $request->input('description'),
+            ]);
 
         return redirect('/cars');
     }

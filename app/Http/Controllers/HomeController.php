@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Buat objek controller baru
      *
      * @return void
      */
@@ -17,7 +15,7 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Buka dashboard
      *
      * @return \Illuminate\Http\Response
      */
