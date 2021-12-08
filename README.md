@@ -1,1 +1,1 @@
-Repo ini dibuat dengan template buatan codewithdary yang saya persingkat dan saya modifikasi. Sehingga hanya menghandle satu tabel dan satu buah proses autentikasi biasa. Kedepannya akan saya konversikan sebagai demo web app inventaris modular yang bisa menambahkan hal.
+Repo ini dibuat dengan template buatan @codewithdary yang saya persingkat dan saya modifikasi. Sehingga hanya menghandle satu tabel dan satu buah proses autentikasi biasa. Kedepannya akan saya konversikan sebagai demo web app inventaris modular yang bisa menambahkan hal.
